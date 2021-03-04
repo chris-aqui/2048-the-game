@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 	// invoke function
 	createBoard()
-});
+
 
 // generate a new number
 function generate(arr) {
@@ -45,36 +45,45 @@ function moveRight(){
 			let totalTwo = squares[i+1].innerHTML
 			let totalThree = squares[i+2].innerHTML
 			let totalFour = squares[i+3].innerHTML
-			// use parseInt to change innerhtml string to a Number
+			// use parseInt to change inner-html string to a Number
 			let row = [parseInt(totalOne), parseInt(totalTwo), parseInt(totalThree), parseInt(totalFour)]
-			console.log('##row ', row)
-			//
 
-			// filter ot all the numbers from the row?
+			// filter ot all the numbers from the row that are not zero?
 			let filteredRow = row.filter(num => num)
-			let missing = 4 - filteredRow.length
-			let zeros = Array(missing).fill(0)
-			let newRow = filteredRow.concat(zeros)
-			console.log('##newRow ', newRow)
 
-			squares[i].innerHTML = newRow[0]
+			// find out how many zeros are missing
+			let missing = 4 - filteredRow.length
+
+			// make an array of zeros missing
+			let zeros = Array(missing).fill(0)
+
+			// adds zeros to the right
+			let newRow = filteredRow.concat(zeros)
+
+			squares[i].innerHTML 		= newRow[0]
 			squares[i +1].innerHTML = newRow[1]
 			squares[i +2].innerHTML = newRow[2]
 			squares[i +3].innerHTML = newRow[3]
 		}
 	}
 }
+// moveRight()
 
 // swipe left
 function moveLeft() {
 	for (let i=0; i < 16; i++) {
 		if (i % 4 === 0) {
+			// get each square in a row
 			let totalOne = squares[i].innerHTML
 			let totalTwo = squares[i+1].innerHTML
 			let totalThree = squares[i+2].innerHTML
 			let totalFour = squares[i+3].innerHTML
+
+			// use parseInt to change inner-html string to a Number
+			// put that into an array
 			let row = [parseInt(totalOne), parseInt(totalTwo), parseInt(totalThree), parseInt(totalFour)]
 
+			// filter out t
 			let filteredRow = row.filter(num => num)
 			let missing = 4 - filteredRow.length
 			let zeros = Array(missing).fill(0)
@@ -129,3 +138,5 @@ function moveDown() {
 		squares[i+(width*3)].innerHTML = newColumn[3]
 	}
 }
+});
+
