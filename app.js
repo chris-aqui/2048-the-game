@@ -289,7 +289,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		keyUp()
 		upButton.classList.add("pressed");
 		setTimeout(function(){
-			console.log('##pol')
 			upButton.classList.remove("pressed")
 		}, 300)
 	})
@@ -298,7 +297,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		keyDown()
 		downButton.classList.add("pressed");
 		setTimeout(function(){
-			console.log('##pol')
 			downButton.classList.remove("pressed")
 		}, 300)
 	})
@@ -306,7 +304,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		keyLeft()
 		leftButton.classList.add("pressed");
 		setTimeout(function(){
-			console.log('##pol')
 			leftButton.classList.remove("pressed")
 		}, 300)
 	})
@@ -314,7 +311,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		keyRight()
 		rightButton.classList.add("pressed");
 		setTimeout(function(){
-			console.log('##pol')
 			rightButton.classList.remove("pressed")
 		}, 300)
 	})
