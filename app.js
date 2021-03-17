@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	const gridDisplay = document.querySelector('.grid')
 	const scoreDisplay = document.getElementById('score')
 	const resultDisplay = document.getElementById('result')
+	//
+	var upButton = document.querySelector('.up')
+	var downButton = document.querySelector('.down')
+	var leftButton = document.querySelector('.left')
+	var rightButton = document.querySelector('.right')
 
 	let squares = []
 	const width = 4
@@ -169,12 +174,32 @@ document.addEventListener('DOMContentLoaded', () => {
 	function control(e) {
 		if(e.keyCode === 37) {
 			keyLeft()
+			leftButton.classList.add("pressed");
+			setTimeout(function(){
+				leftButton.classList.remove("pressed")
+			}, 300)
+			//
 		} else if (e.keyCode === 38) {
 			keyUp()
+			upButton.classList.add("pressed");
+			setTimeout(function(){
+				upButton.classList.remove("pressed")
+			}, 300)
+			//
 		} else if (e.keyCode === 39) {
 			keyRight()
+			rightButton.classList.add("pressed");
+			setTimeout(function(){
+				rightButton.classList.remove("pressed")
+			}, 300)
+			//
 		} else if (e.keyCode === 40) {
 			keyDown()
+			downButton.classList.add("pressed");
+			setTimeout(function(){
+				downButton.classList.remove("pressed")
+			}, 300)
+			//
 		}
 	}
 	document.addEventListener('keyup', control)
@@ -260,31 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	var myTimer = setInterval(addColours, 50)
 	//
-	// var mapping = {
-	// 	37: '.left',
-	// 	38: '.up',
-	// 	39: '.right',
-	// 	40: '.down'
-	// };
 
-	// $(document.documentElement).keydown(function(event){
-	// 	console.log('#')
-	// 	var key = mapping[event.keyCode];
-	// 	if (key) $(key).addClass('pressed');
-	// });
-
-	// $(document.documentElement).keyup(function(event){
-	// 	console.log('#')
-	// 	var key = mapping[event.keyCode];
-	// 	if (key) $(key).removeClass('pressed');
-	// });
-	console.log('##document.documentElement ', document.documentElement)
-	//
-	var upButton = document.querySelector('.up');
-	var downButton = document.querySelector('.down');
-	var leftButton = document.querySelector('.left');
-	var rightButton = document.querySelector('.right');
-	//
 	upButton.addEventListener('click', function(){
 		keyUp()
 		upButton.classList.add("pressed");
